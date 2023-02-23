@@ -1,0 +1,52 @@
+/*
+Author: Sulaiman Awwal;
+Theme: Food Order Website;
+version: 1.0;
+*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper{
+    /* border: 1px solid #000; */
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+/* CSS for Menu */
+.menu{border-bottom: 1px solid #000;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff6b81;
+}
+.menu ul li a:hover{
+    color: #ff4757;
+}
+
+/* CSS for Main-content */
+.main-content{
+    /* margin: 1% 0; */
+    background-color: #f1f2f6;
+}
+.col-2{
+    width: 50%;
+    background-color: #ff4757;
+}
+
+/* CSS for Footer */
+.footer{
+    background-color: #ff4757;
+}
+.text-center{
+    text-align: center;
+}
