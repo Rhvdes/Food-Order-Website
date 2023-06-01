@@ -30,6 +30,16 @@ include('partials/menu.php');
                     echo $_SESSION['remove'];
                     unset($_SESSION['remove']);
                 }
+                if(isset($_SESSION['upload']))
+                {
+                    echo $_SESSION['upload'];
+                    unset($_SESSION['upload']);
+                }
+                if(isset($_SESSION['updated']))
+                {
+                    echo $_SESSION['updated'];
+                    unset($_SESSION['updated']);
+                }
             ?>
             <table class="tbl-full">
                 <tr>
