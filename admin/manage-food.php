@@ -79,7 +79,7 @@ include('partials/menu.php');
                                <tr>
                                     <td><?php echo $sn++;?></td>
                                     <td><?php echo $title;?></td>
-                                    <td>$<?php echo $price;?></td>
+                                    <td>&#8358;<?php echo $price;?></td>
                                     <td><?php 
                                     //check whether image is available or not?
                                     if($image_name=="")

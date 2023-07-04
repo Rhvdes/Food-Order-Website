@@ -57,7 +57,7 @@
                 </tr>
                 <tr>
                     <td>Price</td>
-                    <td><b>$<?php echo $price;?></b></td>
+                    <td><b>&#8358;<?php echo $price;?></b></td>
                 </tr>
                 <tr>
                     <td>Qty</td>

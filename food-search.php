@@ -7,7 +7,7 @@
         <div class="container">
             <?php
                   //get the search keywords
-                  $search=$_POST['search'];
+                  $search=mysqli_real_escape_string($conn, $_POST['search']);
             ?>
             <h2>Foods on Your Search <a href="#" class="text-white"><?php echo $search;?></a></h2>
 
@@ -63,7 +63,7 @@
                             </div>
                             <div class="food-menu-desc">
                             <h4><?php echo $title;?></h4>
-                            <p class="food-price">$<?php echo $price;?></p>
+                            <p class="food-price">&#8358;<?php echo $price;?></p>
                             <p class="food-detail"><?php echo $description;?></p>
                             <br>
                             <a href="#" class="btn btn-primary">Order Now</a>

@@ -20,6 +20,11 @@
             echo $_SESSION['order'];
             unset($_SESSION['order']);
         }
+        if(isset($_SESSION['contact']))
+        {
+            echo $_SESSION['contact'];
+            unset($_SESSION['contact']);
+        }
     ?>
 
     <!-- CAtegories Section Starts Here -->
@@ -126,7 +131,7 @@
 
                             <div class="food-menu-desc">
                                 <h4><?php echo $title;?></h4>
-                                <p class="food-price">$<?php echo $price;?></p>
+                                <p class="food-price">&#8358;<?php echo $price;?></p>
                                 <p class="food-detail"><?php echo $description;?></p>
                                 <br>
 
