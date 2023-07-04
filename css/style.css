@@ -1,7 +1,6 @@
 /* 
-    Author: Vijay Thapa;
+    Author: Sulaiman Awwal;
     Theme: Restaurant Food Order;
-    version: 1.0;
 */
 
 /* CSS for All */
@@ -9,6 +8,14 @@
     margin: 0 0;
     padding: 0 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+.success{
+    color: green;
+    padding: 2%;
+}
+.error{
+    padding: 2%;
+    color:red;
 }
 .container{
     width: 80%;

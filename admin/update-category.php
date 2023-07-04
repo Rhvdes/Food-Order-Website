@@ -47,7 +47,7 @@
             ?>
 
             <form action="" method="POST" enctype="multipart/form-data">
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title:</td>
                     <td><input type="text" name="title" value="<?php echo $title;?>"></td>

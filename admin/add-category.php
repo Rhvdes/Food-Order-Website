@@ -22,7 +22,7 @@
         <br> <br>
         <!-- Add Category Form Start -->
         <form action="" method="POST" enctype="multipart/form-data">
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title:</td>
                     <td><input type="text" name="title" placeholder="Category title"></td>

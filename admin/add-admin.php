@@ -14,7 +14,7 @@ include('partials/menu.php');
             }
         ?>
         <form action="" method="POST">
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Full Name:</td>
                     <td><input type="text" name="full_name" placeholder="Enter your name"></td>

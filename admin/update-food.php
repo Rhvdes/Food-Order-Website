@@ -214,10 +214,14 @@
                             }
                         }
                     }
+                    else
+                    {
+                        $image_name = $current_image;//default image when image is not selected
+                    }
                 }
                 else
                 {
-                    $image_name = $current_image;
+                    $image_name = $current_image;//default image when upload button is not clicked
                 }
                 //4. update food in database
                 //create sql query

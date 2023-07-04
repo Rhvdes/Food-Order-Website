@@ -41,7 +41,7 @@ include('partials/menu.php');
                     unset($_SESSION['updated']);
                 }
             ?>
-            <table class="tbl-full">
+            <table>
                 <tr>
                     <th>S.N.</th>
                     <th>Title</th>

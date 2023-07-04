@@ -43,7 +43,7 @@ include('partials/menu.php');
             <!-- button to add Admin -->
             <a href="add-admin.php" class="btn-primary">Add Admin</a>
             <br><br><br>
-            <table class="tbl-full">
+            <table>
                 <tr>
                     <th>S.N.</th>
                     <th>Full Name</th>

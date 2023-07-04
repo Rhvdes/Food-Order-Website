@@ -1,7 +1,6 @@
 /*
 Author: Sulaiman Awwal;
 Theme: Food Order Website;
-version: 1.0;
 */
 *{
     margin: 0;
@@ -51,7 +50,7 @@ version: 1.0;
     float: none;
     clear: both;
 }
-.tbl-full{
+/* .tbl-full{
     width: 100%;
 }
 .tbl-30{
@@ -64,7 +63,27 @@ table tr th{
 }
 table tr td{
     padding: 1%;
-}
+} */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table tr th,
+  table tr td {
+    border: 1px solid black;
+    padding: 1%;
+    text-align: left;
+  }
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
+  table tr th {
+    border-bottom: 1px solid black;
+  }
+ 
+  
 .btn-primary{
     background-color: #1e90ff;
     padding: 1%;
