@@ -103,7 +103,7 @@
             {
                 //1 Get all value from form
                 $id = $_POST['id'];
-                $title = $_POST['title'];
+                $title = mysqli_real_escape_string($conn, $_POST['title']);
                 $current_image = $_POST['current_image'];
                 $featured = $_POST['featured'];
                 $active = $_POST['active'];

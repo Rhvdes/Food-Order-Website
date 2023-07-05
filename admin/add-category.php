@@ -63,7 +63,7 @@
                 // echo "clicked";
 
                 //1. Get the value from category form
-                $title = $_POST['title'];
+                $title = mysqli_real_escape_string($conn, $_POST['title']);
 
                 //for Radio input type, check whether button is selected or not
                 if(isset($_POST['featured']))

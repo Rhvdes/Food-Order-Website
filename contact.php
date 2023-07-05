@@ -24,9 +24,9 @@
         {
             //buttton clicked
             //get all details from form
-            $name=$_POST['name'];
-            $email=$_POST['email'];
-            $message=$_POST['message'];
+            $name=mysqli_real_escape_string($conn, $_POST['name']);
+            $email=mysqli_real_escape_string($conn, $_POST['email']);
+            $message=mysqli_real_escape_string($conn, $_POST['message']);
 
             //create sql query
             $sql="INSERT INTO tbl_contact SET
