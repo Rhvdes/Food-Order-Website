@@ -25,6 +25,11 @@
                 echo $_SESSION['no-login-message'];
                 unset($_SESSION['no-login-message']);
             }
+            if(isset ($_SESSION['registered']))
+            {
+                echo $_SESSION['registered'];
+                unset($_SESSION['registered']);
+            }
 
         ?>
         <br>
@@ -39,43 +44,64 @@
         </form>
         <br>
         <!-- Login Form Ends -->
+
+        
+        <!-- Registration link -->
+        <p class="text-center">Don't have an account? <a href="<?php echo SITEURL?>admin/register.php">Click here</a></p>
+        <br>
         <p class="text-center">Created By - <a href="#">Sulaiman Awwal</a></p>
     </div>
 </body>
 </html>
 <?php
-    //check whether submit button is clicked or not
-    if(isset($_POST['submit']))
+      if (isset($_POST['submit'])) 
+      {
+    // Retrieve the username and password from the form
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    // Retrieve the hashed password from the database based on the entered username
+    $sql = "SELECT password FROM tbl_admin WHERE username = '$username'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) 
     {
-        //process for login
-        //1. Get the Data from login form
-        $username =mysqli_real_escape_string($conn,  $_POST['username']);
-        $password =mysqli_real_escape_string($conn, md5($_POST['password']));
-
-        //2. sql query to check whether the username and password exists
-        $sql = "SELECT * FROM tbl_admin WHERE username = '$username' AND password = '$password'";
-
-        //3. execute sql query
-        $result = mysqli_query($conn, $sql);
-
-        //4. count rows to check whether user exists or  not
-        $count = mysqli_num_rows($result);
-        if($count == 1)
+        if (mysqli_num_rows($result) === 1) 
         {
-            //user available, login success
-            //Create a session message
-            $_SESSION['login'] = "<div class='success'>Login Successful</div>";
-            //create a session to check if user is logged in or not
-            $_SESSION['user'] = $username;
-            //redirect to home page
-            header('location:'.SITEURL.'admin/');
-        }
-        else
+            $row = mysqli_fetch_assoc($result);
+            $hashedPassword = $row['password'];
+
+            // Verify the entered password with the hashed password
+            if (password_verify($password, $hashedPassword)) 
+            {
+                // Password is correct, login success
+                $_SESSION['login'] = "<div class='success'>Login Successful</div>";
+                $_SESSION['user'] = $username;
+                header('location:'.SITEURL .'admin/');
+                exit();
+            } 
+            else 
+            {
+                // Incorrect password
+                $_SESSION['login'] = "<div class='error'>Incorrect username or password</div>";
+                header('location:'.SITEURL.'admin/login.php');
+                exit();
+            }
+        } 
+        else 
         {
-            //user not available, login failed
-             //Create a session message and redirect to login page
-             $_SESSION['login'] = "<div class='error'>Username or Password Incorrect</div>";
-             header('location:'.SITEURL.'admin/login.php');
+            // Username not found
+            $_SESSION['login'] = "<div class='error'>Incorrect username or password</div>";
+            header('location:'.SITEURL.'admin/login.php');
+            exit();
         }
+    } 
+    else 
+    {
+        // Database query failed
+        $_SESSION['login'] = "<div class='error'>Database error. Please try again</div>";
+        header('location:'.SITEURL.'admin/login.php');
+        exit();
     }
+}
 ?>
