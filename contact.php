@@ -6,6 +6,7 @@
 <div class="main-content">
     <div class="wrapper">
     <h1>Contact Us</h1>
+    <br><br>
     <form action="" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
