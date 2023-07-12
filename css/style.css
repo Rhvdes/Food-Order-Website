@@ -146,6 +146,29 @@ fieldset{
 
 
 /* CSS for Food Menu */
+/* .food-menu {
+    background-color: #ececec;
+    padding: 4% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .food-menu-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+  }
+  
+  .food-menu-box {
+    width: 43%;
+    margin: 1%;
+    padding: 2%;
+    background-color: white;
+    border-radius: 15px;
+  } */
+
 .food-menu{
     background-color: #ececec;
     padding: 4% 0;
@@ -211,6 +234,12 @@ fieldset{
 
 /* CSS for Mobile Size or Smaller Screen */
 
+@media only screen and (max-width: 1200px) {
+    .food-menu-box {
+      width: 48%;
+    }
+  }
+
 @media only screen and (max-width:768px){
     .logo{
         width: 80%;
@@ -247,7 +276,9 @@ fieldset{
         width: 100%;
         margin: 4% auto;
     }
-
+    /* .food-menu{
+        width: 90%;
+    } */
     .food-menu{
         padding: 20% 0;
     }
